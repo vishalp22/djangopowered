@@ -1,0 +1,15 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Logged out" %}{% endblock %}
+
+{% block content %}
+
+    <div class="text-center text-primary" style="padding-top: 100px;">
+    <h3>{% trans "Successfully logged out" %}.</h3>
+    </div>
+    <div class="text-center">
+    <button class="btn btn-lg btn-success"><a style="color: white" href="{% url 'auth_login' %}"> Login </a> </button>
+    </div>
+
+{% endblock %}

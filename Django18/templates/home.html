@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+
+<title>{% block head_title %} Welcome to {% endblock %}</title>
+
+
+{% block jumbotron %}
+
+        <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+          <div class="row">
+              <div class="col-sm-8">
+                  <h1>Try Django</h1>
+                <p>This example is a quick example of Bootstrap & Django Framework to illustrate how the use for web development very quickly.</p>
+
+                <p>
+                    <a class="btn btn-lg btn-success" href="#" role="button">Join Us &raquo;</a>
+                </p>
+              </div>
+
+              <div class="col-sm-4" style="height:250px;">
+                    <img src="{% static 'img/django.jpg' %}">
+              </div>
+          </div>
+      </div>
+
+    </div> <!-- /container -->
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+        <h1 class="text-center">{{ title }} </h1>
+
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input class="btn btn-success" type="submit" value="Sign Up">
+            </form>
+        </div>
+    </div>
+</div>
+    <br>
+    <br>
+
+{% endblock %}
